@@ -383,6 +383,10 @@ for fruta in frutas:
 <div id="código-exercício-2" class="section level4">
 <h4>Código exercício 2</h4>
 <pre class="python"><code>
+# O range começa em 10, vai até 101 (para incluir o 100) e pula de 10 em 10
+
+for numero in range(10, 101, 10):
+    print(numero)
 
 
 
@@ -404,13 +408,20 @@ Captura de input() fora do loop e cálculo direto (numero * i) dentro do corpo d
 <div id="código-exercício-3" class="section level4">
 <h4>Código exercício 3</h4>
 <pre class="python"><code>
+# 1. Captura do input fora do loop (convertendo para inteiro)
 
+numero = int(input(&quot;Digite um número para ver a tabuada: &quot;))
 
+print(f&quot;\nTabuada do {numero}:&quot;)
 
+# 2. Laço for de 1 a 10 (o range vai até 11 para incluir o 10)
 
-
-
-</code></pre>
+for i in range(1, 11):
+    
+    # 3. Cálculo direto dentro do corpo do for
+    
+    resultado = numero * i
+    print(f&quot;{numero} x {i} = {resultado}&quot;)</code></pre>
 <p><a href="03-aula03/exercicios/parte-01-Estrutura-Repeticao/exercicio-4/exercicio4-enunciado.txt">Exercício
 4</a></p>
 </div>
@@ -428,7 +439,20 @@ Captura de input() fora do loop e cálculo direto (numero * i) dentro do corpo d
 <pre class="python"><code>
 
 
+# 1. Captura o número fora do loop (apenas uma vez)
 
+numero = int(input(&quot;Digite um número para ver a tabuada: &quot;))
+
+print(f&quot;Tabuada do {numero}:&quot;)
+
+# 2. O laço for percorre os números de 1 a 10
+
+for i in range(1, 11):
+
+    # 3. O cálculo é feito diretamente dentro do corpo do laço
+
+    resultado = numero * i
+    print(f&quot;{numero} x {i} = {resultado}&quot;)
 
 
 
@@ -469,11 +493,15 @@ O programa deve informar se esse número é Par ou Ímpar.</code></pre>
 <div id="código-exercício-6" class="section level4">
 <h4>Código exercício 6</h4>
 <pre class="python"><code>
+# 1. Solicita o número ao usuário e converte para inteiro
 
+numero = int(input(&quot;Digite um número inteiro: &quot;))
 
-
-
-
+# 2. Verifica se o resto da divisão por 2 é igual a zero
+if numero % 2 == 0:
+    print(f&quot;O número {numero} é Par.&quot;)
+else:
+    print(f&quot;O número {numero} é Ímpar.&quot;)
 </code></pre>
 <p><a href="03-aula03/exercicios/parte-02-Estrutura-Controle/exercicio-8/exercicio8-enunciado.txt">Exercício
 7</a></p>
@@ -492,17 +520,18 @@ O programa deve informar se esse número é Par ou Ímpar.</code></pre>
 <h4>Código exercício 7</h4>
 <pre class="python"><code>
 
+# 1. Recebe a temperatura (float permite números decimais como 22.5)
 
+temperatura = float(input(&quot;Digite a temperatura em graus Celsius: &quot;))
 
+# 2. Verifica as faixas de classificação
 
-
-
-
-
-
-
-
-</code></pre>
+if temperatura &lt; 15:
+    print(&quot;Frio&quot;)
+elif temperatura &lt;= 25:
+    print(&quot;Agradável&quot;)
+else:
+    print(&quot;Quente&quot;)</code></pre>
 <p><a href="03-aula03/exercicios/parte-02-Estrutura-Controle/exercicio-7/exercicio7-enunciado.txt">Exercício
 8</a></p>
 </div>
@@ -516,20 +545,28 @@ Calcule e mostre o valor final da compra.</code></pre>
 <div id="código-exercício-8" class="section level4">
 <h4>Código exercício 8</h4>
 <pre class="python"><code>
+# 1. Definição das variáveis base
 
+preco_unitario = 100.00
 
+quantidade = int(input(&quot;Quantas unidades você deseja comprar? &quot;))
 
+# 2. Cálculo do valor total sem desconto
+valor_total = preco_unitario * quantidade
 
+# 3. Verificação da condição de desconto
+if quantidade &gt;= 10:
+    # Aplica 10% de desconto
+    desconto = valor_total * 0.10
+    valor_final = valor_total - desconto
+    print(f&quot;Você ganhou 10% de desconto! Valor economizado: R$ {desconto:.2f}&quot;)
+else:
+    # Sem desconto
+    valor_final = valor_total
+    print(&quot;Quantidade insuficiente para desconto.&quot;)
 
-
-
-
-
-
-
-
-
-
+# 4. Exibição do resultado
+print(f&quot;O valor final da sua compra é: R$ {valor_final:.2f}&quot;)
 </code></pre>
 </div>
 </div>
